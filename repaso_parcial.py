@@ -8,64 +8,36 @@ if len(word) == 4:
 else:
     word+="?"
 print(word)
-"""
+
 #ejercicio.2
-import random
+#ejercicio.3
 
-# Lista de palabras para el juego
-palabras = ["python", "programacion", "juego", "computadora", "teclado", "pantalla"]
+phrase = input("Ingresa una frase o cadena de texto: ")
 
-# Elegir una palabra al azar
-palabra = random.choice(palabras)
+words = phrase.split()
+amount_words = len(words)
 
-# Inicializar variables
-intentos = 6  # Número de intentos permitidos
-letras_adivinadas = []  # Lista para almacenar letras adivinadas
+print(f"La frase ingresada contiene {amount_words} palabras.")
+"""
 
-# Mostrar un mensaje de bienvenida
-print("¡Bienvenido al juego de adivinar la palabra!")
-print("Tienes", intentos, "intentos para adivinar la palabra.")
+month = input("S-Si asistio todo el mes\nN-No asistio todo el mes)").lower()
+hours = float(input("Ingrese la cantidad de horas que trabajo los dias domingo: "))
+salary = float(input("Ingrese su salario: "))
 
-# Crear una cadena con guiones bajos para representar las letras no adivinadas
-palabra_oculta = "_" * len(palabra)
+if month == "s":
+    if hours >= 6 and hours <= 10:
+        additional = (salary*0.10)+salary
+    elif hours >= 3 and hours <= 5:
+        additional = (salary*0.03)+salary
+    elif hours < 3:
+        additional=salary
+elif month == "n":
+    if hours >= 3 and hours <=10:
+        additional = (salary*0.02)+salary
+    elif hours < 3:
+        additional=salary
 
-# Bucle principal del juego
-while intentos > 0:
-    # Mostrar la palabra oculta
-    print("Palabra:", palabra_oculta)
-    
-    # Solicitar una letra al usuario
-    letra = input("Ingresa una letra: ").lower()
-    
-    # Verificar si la letra ya se adivinó
-    if letra in letras_adivinadas:
-        print("Ya adivinaste esa letra. Intenta con otra.")
-        continue
-    
-    # Agregar la letra a la lista de letras adivinadas
-    letras_adivinadas.append(letra)
-    
-    # Verificar si la letra está en la palabra
-    if letra in palabra:
-        print("¡Correcto! La letra está en la palabra.")
-        # Actualizar la cadena de la palabra oculta con la letra adivinada
-        palabra_oculta = "".join([letra if letra == p else oculta for p, oculta in zip(palabra, palabra_oculta)])
-    else:
-        print("Incorrecto. Esa letra no está en la palabra.")
-        intentos -= 1
-    
-    # Verificar si el usuario adivinó toda la palabra
-    if palabra_oculta == palabra:
-        print("¡Felicidades! Adivinaste la palabra:", palabra)
-        break
-
-# Si el usuario se queda sin intentos, mostrar la palabra correcta
-if intentos == 0:
-    print("¡Perdiste! La palabra correcta era:", palabra)
-
-
-
-
+print(f"El monto final de su salario es ${additional}")
 
 
 
