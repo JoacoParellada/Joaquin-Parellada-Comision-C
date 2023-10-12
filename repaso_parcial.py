@@ -18,9 +18,10 @@ words = phrase.split()
 amount_words = len(words)
 
 print(f"La frase ingresada contiene {amount_words} palabras.")
-"""
 
-month = input("S-Si asistio todo el mes\nN-No asistio todo el mes)").lower()
+#ejercicio.4
+
+month = input("S-Si asistio todo el mes\nN-No asistio todo el mes: ").lower()
 hours = float(input("Ingrese la cantidad de horas que trabajo los dias domingo: "))
 salary = float(input("Ingrese su salario: "))
 
@@ -39,9 +40,38 @@ elif month == "n":
 
 print(f"El monto final de su salario es ${additional}")
 
+#ejercicio.5
 
+num1 = int(input("Ingrese primer numero: "))
+num2 = int(input("Ingrese segundo numero: "))
 
+if num1 == num2:
+    result = num1 * num2
+    print(f"{num1}x{num2}={result}")
+elif num1 > num2: 
+    result = num1 - num2
+    print(f"{num1}-{num2}={result}")
 
+elif num1 < num2:
+    result = num1 + num2
+    print(f"{num1}+{num2}={result}")
+"""
+#ejercicio.6
+
+age = int(input("Ingrese la edad de la persona:"))
+antiquity = int(input("Ingrese los años de antiguedad en empleo: "))
+
+if age > antiquity:
+    if age >= 60 and antiquity < 25:
+        print("La persona tiene jubilacion por edad.")
+    elif age < 60  and antiquity >= 25:
+        print("La persona tiene jubilacion por antiguedad joven.")
+    elif age >= 60 and antiquity >= 25:
+        print("La persona tiene una jubilacion por antiguedad adulta.")
+elif age < 0 or antiquity < 0:
+        print("[ERROR] Ingresa valores positivos.")
+elif age < antiquity:
+     print("[ERROR] Los datos ingresados no son correctos.")
 
 
 
